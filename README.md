@@ -33,7 +33,7 @@ These links identify the upstream projects. Commonworld's deployment also has it
 
 ## Network snapshot
 
-Last documented operational snapshot: **20 November 2026**. Recheck the endpoints before relying on this information.
+Last documented operational snapshot: **20 November 2026**. This date covers the operational checks; linked posts and comments include records published on 21 November 2026 (UTC). Recheck the endpoints before relying on this information.
 
 | Field | Value |
 |---|---|

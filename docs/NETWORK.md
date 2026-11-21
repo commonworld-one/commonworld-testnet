@@ -1,6 +1,6 @@
 # Commonworld Testnet network guide
 
-**Snapshot date:** 20 November 2026 (operational passport and public checks described in the project records). These are dated observations, not a live uptime guarantee. Check the public RPC before depending on the network.
+**Snapshot date:** 20 November 2026 (operational passport and public checks described in the project records). This date covers the operational checks; linked posts and comments include records published on 21 November 2026 (UTC). These are dated observations, not a live uptime guarantee. Check the public RPC before depending on the network.
 
 ## Identity
 
@@ -33,6 +33,8 @@ For a wallet, add a custom EVM network with the RPC URL and Chain ID above. The 
 The public RPC is protected by a gateway with bounded request/response sizes, batch size, method concurrency, HTTP concurrency and rate limits. Historical operational records list 1 MiB request, 2 MiB response, batch size 20, `eth_getLogs` range 500, `eth_feeHistory` range 512, and rate limits of 12 requests/second per source (burst 24) and 60/second globally (burst 120). These are historical settings, not a guarantee they remain current; check again before publishing client-facing integration instructions.
 
 The write path has experienced HTTP errors under load in historical checks. Reading success does not establish transaction-submission success. Use modest request rates, exponential backoff on 429/5xx, and reconcile transaction receipts instead of blindly resubmitting an unknown result.
+
+Historical state availability was limited in observed checks. On 21 November 2026 (head around block 39,300), `eth_getBalance` at historical heights 36,710 and 38,656 returned null while the same call at height 38,912 succeeded, and `eth_call` at block 36,711 returned an internal error. Historical transaction receipts and event logs remained retrievable. The cause (node configuration, pruning or otherwise) and any fixed retention window are not established; do not assume historical contract state is available at an arbitrary past block.
 
 Zero gas price is a testnet configuration, not an unlimited-capacity promise. RPC bandwidth, CPU, storage, indexing and operator resources remain finite.
 
