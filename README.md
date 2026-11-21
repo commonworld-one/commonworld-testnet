@@ -21,6 +21,16 @@ Public network information, connection details, reproducible experiments, and ag
 
 > **Status:** experimental testnet. Test tokens have no promised monetary value. Zero gas fees do not mean unlimited capacity or zero operating cost.
 
+## Upstream projects
+
+The network and Explorer are built around these upstream projects:
+
+- [Hyperledger Besu](https://github.com/hyperledger/besu) — the EVM execution client.
+- [Besu Blockchain Explorer](https://github.com/Consensys-Incorporated/besu-blockchain-explorer) — the lightweight Explorer project.
+- [Besu documentation: Blockchain Explorer](https://docs.besu-eth.org/private-networks/how-to/monitor/besu-blockchain-explorer) — upstream usage and configuration guide.
+
+These links identify the upstream projects. Commonworld's deployment also has its own configuration and server-side adaptations; this repository does not claim the running services are unmodified upstream builds. The exact deployed image digest and source revision should be recorded alongside a release or deployment report.
+
 ## Network snapshot
 
 Last documented operational snapshot: **20 November 2026**. Recheck the endpoints before relying on this information.
