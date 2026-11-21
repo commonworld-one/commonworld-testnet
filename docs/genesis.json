@@ -1,0 +1,31 @@
+{
+  "config": {
+    "chainId": 11111327,
+    "londonBlock": 0,
+    "shanghaiTime": 0,
+    "cancunTime": 0,
+    "pragueTime": 0,
+    "zeroBaseFee": true,
+    "qbft": {
+      "blockperiodseconds": 2,
+      "emptyblockperiodseconds": 5,
+      "requesttimeoutseconds": 4,
+      "epochlength": 30000,
+      "blockreward": "0",
+      "pertxgaslimit": 16777216
+    }
+  },
+  "nonce": "0x0",
+  "timestamp": "0x0",
+  "gasLimit": "0x5f5e100",
+  "difficulty": "0x1",
+  "mixHash": "0x63746963616c2062797a616e74696e65206661756c7420746f6c6572616e6365",
+  "coinbase": "0x0000000000000000000000000000000000000000",
+  "baseFeePerGas": "0",
+  "alloc": {
+    "16e2790be88a2ce5d5e982a32ab0427574659df9": {
+      "balance": "10000000000000000000000000000"
+    }
+  },
+  "extraData": "0xf87aa00000000000000000000000000000000000000000000000000000000000000000f8549498eadc3caee5c150e2d495ece408152789e5b26494da390cac0780abbda751d8144bf03b20e5525d52945f326f33a129e958440855e7f34a3fc8bbdee7df946b8cc771381d52e8d3281f77fddb7666a209455dc080c0"
+}
