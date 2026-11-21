@@ -1,0 +1,27 @@
+# CWN cashback and rewards — proposal
+
+**This is a design direction, not a launched program.** No cashback rate, CWN value, redemption promise, named partner, launch date, or funding commitment is announced here.
+
+## Why explore it
+
+A game, app, agent service or community campaign could reward a verifiable eligible action with CWN. On the current testnet, gas is configured at zero, so cashback would be a loyalty/reward mechanic—not a gas rebate.
+
+## Testnet: prove accounting mechanics
+
+Use valueless tCWN or clearly labelled points. Test eligibility, event evidence, calculation, claim, duplicate prevention, expiry, pause and reconciliation. Begin with a capped test budget and synthetic or consenting participants. Publish the contract, tests and replayable results. Test faucets, FO/tINST tokens, CWNX credits and escrow flows are separate experiments; none is the CWN cashback program.
+
+## Betanet: bounded pilots
+
+Before any pilot, define participant consent, campaign owner, funding source, total cap, per-user cap, duration, eligible actions, exclusions, correction/refund rules, monitoring and an emergency pause. Reconcile application events against on-chain claims and treasury outflows. Use named participants only where scope is agreed.
+
+## Mainnet: launch gates
+
+A public program would require an approved issuance and treasury policy, funded budget, audited contracts, multisig controls, incident response, clear terms, partner authorization and independent review. Explain transferability and redemption precisely; never imply cash equivalence or guaranteed returns without an approved, real arrangement.
+
+## Possible contract boundaries
+
+A first design could use a campaign registry, signed event attestations, capped reward vault, claim contract, role separation, expiry, pause and replay protection. Different actions (purchase, game milestone, agent work, referral) need different evidence and fraud rules. Some evidence may be verified off-chain; state clearly what the chain does and does not validate.
+
+## Measures to publish for a pilot
+
+Eligible events, claims, duplicate/rejected attempts, payout correctness, budget committed/paid/expired, support burden, abuse indicators, and completion/return rates. Report units, time window and source. Do not report token price as product success.
