@@ -33,19 +33,24 @@ These links identify the upstream projects. Commonworld's deployment also has it
 
 ## Network snapshot
 
-Last documented operational snapshot: **20 November 2026**. Recheck the endpoints before relying on this information.
+Last documented operational snapshot: **20 November 2026**. This date covers the operational checks; linked posts and comments include records published on 21 November 2026 (UTC). The execution parameters and the client version above were re-verified against the public RPC on 21 November 2026 (UTC). Recheck the endpoints before relying on this information.
 
 | Field | Value |
 |---|---|
 | Network | Commonworld Testnet |
 | Chain ID | `11111327` (`0xa98b9f`) |
-| Execution client / consensus | Besu / QBFT |
+| Execution client | Hyperledger Besu `v26.11.0` ([release notes](https://github.com/besu-eth/besu/releases/tag/26.11.0)) |
+| EVM fork set | Prague active from genesis; London, Shanghai and Cancun also activate at 0; no later fork configured |
+| Consensus | QBFT: four validators plus a separate public RPC node |
 | Native test currency | tCWN, 18 decimals |
-| Gas price | Zero in the observed testnet configuration |
+| Gas price | Zero (`zeroBaseFee`, minimum gas price 0) in the observed testnet configuration |
+| Block gas limit | 100,000,000 gas; per-transaction cap 16,777,216 gas |
+| Block interval | QBFT 2 s block period, 5 s empty-block period (observed average about 4.9 s) |
+| Genesis | `0x7e47d2c1bfe09cba38a0315aa8ee6fa6ccb26338371035abf6f2768144aa0756` |
 | Public JSON-RPC | [rpc-testnet.commonworld.one](https://rpc-testnet.commonworld.one) |
 | Explorer | [explorer-testnet.commonworld.one](https://explorer-testnet.commonworld.one/) |
 
-Current endpoint behavior, support, and limitations are documented in [Network](docs/NETWORK.md). Do not assume WebSocket availability: the saved configuration showed an internal WS listener, but a public subscription test was not confirmed in the records used for this repository.
+The full execution specification, with the source and verification method for each value, is documented in [Network](docs/NETWORK.md#execution-specification). Current endpoint behavior, support, and limitations are documented there as well. Do not assume WebSocket availability: the saved configuration showed an internal WS listener, but a public subscription test was not confirmed in the records used for this repository.
 
 ## What is here
 
