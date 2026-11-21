@@ -8,6 +8,7 @@
 |---|---|
 | Chain name | Commonworld Testnet |
 | Chain ID | `11111327` / `0xa98b9f` |
+| Genesis file | [`docs/genesis.json`](genesis.json), SHA-256 `5101f10df6cff30ec56a2e297a22c5cb8e9f4eabbaa9357bb440e496011bd636` (1,015 bytes) |
 | Client / consensus | Hyperledger Besu `v26.11.0` / QBFT |
 | Native currency | tCWN, 18 decimals |
 | Gas price | Zero in the recorded testnet configuration |
@@ -18,7 +19,7 @@ The recorded topology had four validators and a separate RPC node. This is a top
 
 ## Execution specification
 
-Values below come from the operator's genesis and deployment records (dated 18 and 19 November 2026) and were cross-checked against the public RPC with read-only calls on 21 November 2026 (UTC), around head block 39,400. The genesis and compose files themselves are not published in this repository; where the RPC cannot expose a value, it is marked as operator-reported.
+Values below come from the operator's genesis and deployment records (dated 18 and 19 November 2026) and were cross-checked against the public RPC with read-only calls on 21 November 2026 (UTC), around head block 39,400. The genesis file is published in this repository (see Identity); the compose files are not. Where the RPC cannot expose a value, it is marked as operator-reported.
 
 ### Chain and forks
 
@@ -74,9 +75,20 @@ The validator list is decoded from genesis `extraData`; live blocks show rotatin
 
 The deployment records state that all four validators and the RPC node run the same pinned image. `web3_clientVersion` on the public RPC and the proposer vanity written into recent block `extraData` both report `besu 26.11.0`; each is evidence about the node that produced it, not independent proof of every validator's binary.
 
+### Verification status
+
+| Item | Status |
+|---|---|
+| Chain ID 11111327, genesis hash | Verified against live RPC, 21 Nov 2026 |
+| Prague headers from block 0 | Verified against live RPC, 21 Nov 2026 |
+| Zero base fee, zero-fee receipts | Verified against live RPC, 21 Nov 2026 |
+| Block gas limit 100,000,000 | Verified against live RPC, 21 Nov 2026 |
+| Signed transaction submission (legacy and type-2) | Verified by fresh transactions, 21 Nov 2026 (blocks 39768, 39769) |
+| Gateway method allowlist and limits | Operator-reported, 19 Nov 2026 |
+
 ### Not published
 
-The genesis file, node compose files, the Explorer build version and the edge gateway build are not published in this repository. This document quotes the operator's dated records for those values and marks them operator-reported.
+The node compose files are not published in this repository. The genesis file is published at [`docs/genesis.json`](genesis.json). The Explorer image and edge gateway builds are quoted from the operator's dated records and marked operator-reported.
 
 ## Connect
 
@@ -92,7 +104,7 @@ For a wallet, add a custom EVM network with the RPC URL and Chain ID above. The 
 
 ## Limits and availability
 
-The public RPC is protected by a gateway with bounded request/response sizes, batch size, method concurrency, HTTP concurrency and rate limits. Operator records dated 19 November 2026 list a 1 MiB request body, 2 MiB response, batch size 20, an `eth_getLogs` range of 500 blocks, an `eth_feeHistory` range of 512 blocks, at most 20 in-flight method units with 2 concurrent HTTP requests, and rate limits of 12 requests/second per source (burst 24) and 60/second globally (burst 120). These settings were not re-verified under load for this document; check again before publishing client-facing integration instructions.
+The public RPC is protected by a gateway with bounded request/response sizes, batch size, method concurrency, HTTP concurrency and rate limits. Operator records dated 19 November 2026 list a 1 MiB request body, 2 MiB response, batch size 20, an `eth_getLogs` range of 500 blocks, an `eth_feeHistory` range of 512 blocks, at most 20 in-flight method units with 2 concurrent HTTP requests, and rate limits of 12 requests/second per source (burst 24) and 60/second globally (burst 120). These settings were not re-verified under load for this document; check again before publishing client-facing integration instructions. The same records report the gateway build: base image `node:24-alpine` at digest `sha256:d8d97e479cdc64f052f81f129362168717c59783ade8dcc1abd22e1cca8dbd7c` and gateway script SHA-256 `863c6f50a19dc76fb4c73e1c0ab884c06e008122f3767350b03d429ff420552a` (operator-reported, not independently verified against the running deployment).
 
 The public gateway allowlists wallet reads, fee and gas estimation, historical queries and signed `eth_sendRawTransaction`; `eth_sendTransaction`, `admin`, `debug`, `txpool` and QBFT mutation methods are not available on the public gateway (operator records, applied 19 November 2026).
 
@@ -108,7 +120,7 @@ A saved server configuration showed an internal Besu WebSocket listener, but the
 
 ## Explorer and indexing
 
-The Explorer provides public pages for blocks, nodes and transactions. Historical checks showed that HTTP 200 for the page itself did not guarantee that the block-list API succeeded; transient 500/502 responses and RPC path failures were observed. Treat the Explorer as a useful testnet interface, not a complete indexed analytics service. No verified network-wide totals for all transactions, addresses and contracts are published here.
+The Explorer provides public pages for blocks, nodes and transactions. Historical checks showed that HTTP 200 for the page itself did not guarantee that the block-list API succeeded; transient 500/502 responses and RPC path failures were observed. Treat the Explorer as a useful testnet interface, not a complete indexed analytics service. No verified network-wide totals for all transactions, addresses and contracts are published here. Operator records dated 19 November 2026 report the Explorer image digest `sha256:d41e02648ec9e346e2128672ae78b6e893f4cec98a60df38a9ce72a8f7a06a34`; it was not independently verified against the running deployment.
 
 ## Recovery evidence
 
