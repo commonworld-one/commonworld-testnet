@@ -2,6 +2,16 @@
 
 **This is a design direction, not a launched program.** No cashback rate, CWN value, redemption promise, named partner, launch date, or funding commitment is announced here.
 
+## Product goal
+
+The product goal is embedded CWN rewards in ordinary apps, games, subscriptions and purchases, without requiring the user to install or operate a separate wallet such as MetaMask.
+
+One intended use case is purchase-linked cashback: a person buys a service through a Commonworld partner or affiliate flow and receives a reward in CWN, potentially alongside perks or discounts.
+
+The same purchase-linked reward model is intended to cover the agent economy: agents that buy services through partner or affiliate flows can receive CWN rewards too. Together, these flows are meant to form a partner network in which Commonworld earns revenue from partners. This document does not set reward rates, revenue shares or a settlement design.
+
+The campaign, contract and claim mechanisms below are possible implementation components, not a replacement for that product goal. The user-facing experience should remain inside the application or purchase flow. The custody model, account design and payment routing remain open design questions. This is a proposed experience, not a claim that it is available today.
+
 ## Why explore it
 
 A game, app, agent service or community campaign could reward a verifiable eligible action with CWN. On the current testnet, gas is configured at zero, so cashback would be a loyalty/reward mechanic—not a gas rebate.
