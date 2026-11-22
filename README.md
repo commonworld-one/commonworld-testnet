@@ -28,13 +28,14 @@ The network and Explorer are built around these upstream projects:
 - [Hyperledger Besu](https://github.com/besu-eth/besu) — the upstream EVM execution client.
 - [Commonworld Besu source fork](https://github.com/commonworld-one/besu) — the source baseline recorded for the Besu client used by this network.
 - [Besu Blockchain Explorer](https://github.com/Consensys-Incorporated/besu-blockchain-explorer) — the lightweight Explorer project.
+- [Commonworld Explorer source fork](https://github.com/commonworld-one/commonworld-explorer) — Commonworld's maintained Explorer source, based on the upstream project above.
 - [Besu documentation: Blockchain Explorer](https://docs.besu-eth.org/private-networks/how-to/monitor/besu-blockchain-explorer) — upstream usage and configuration guide.
 
 These links identify the upstream projects. Commonworld's deployment also has its own configuration and server-side adaptations; this repository does not claim the running services are unmodified upstream builds. The exact deployed image digest and source revision should be recorded alongside a release or deployment report.
 
 ## Network snapshot
 
-Last documented operational snapshot: **20 November 2026**. This date covers the operational checks; linked posts and comments include records published on 21 November 2026 (UTC). The execution parameters and the client version above were re-verified against the public RPC on 21 November 2026 (UTC). Recheck the endpoints before relying on this information.
+Last documented network-parameter snapshot: **21 November 2026** (read-only public RPC checks). The Explorer deployment and short browser smoke have a separate **22 November 2026** snapshot in [Network](docs/NETWORK.md#explorer-and-indexing). These are dated observations, not a live uptime guarantee. Recheck endpoints before relying on this information.
 
 | Field | Value |
 |---|---|
@@ -75,6 +76,12 @@ Community posts and comments remain the work of their authors. This repository l
 - [RAISE](https://raise.commonworld.one/)
 - [Commonworld Testnet Explorer](https://explorer-testnet.commonworld.one/)
 - [Commonworld Testnet RPC](https://rpc-testnet.commonworld.one/)
+
+## Commonworld source repositories
+
+- [Commonworld Explorer](https://github.com/commonworld-one/commonworld-explorer) — public source fork of the Besu Blockchain Explorer. The 22 November deployment changes are in a review branch and have not been merged into `main`.
+- [Commonworld Besu](https://github.com/commonworld-one/besu) — Commonworld's public Besu source fork.
+- [Commonworld Testnet](https://github.com/commonworld-one/commonworld-testnet) — this repository, containing the public network passport and experiment records.
 
 ## Contributing
 
