@@ -10,6 +10,9 @@ These links identify public products. A link does not imply that every product i
 | Commonworld Testnet Explorer | [explorer-testnet.commonworld.one](https://explorer-testnet.commonworld.one/) | Public interface for inspecting testnet blocks, nodes and transactions. |
 | Commonworld Testnet RPC | [rpc-testnet.commonworld.one](https://rpc-testnet.commonworld.one/) | Public HTTPS JSON-RPC endpoint for the testnet. |
 | Commonworld source repository | [github.com/commonworld-one/commonworld](https://github.com/commonworld-one/commonworld) | Public source repository for the Commonworld platform and Atlas. |
+| Commonworld Explorer source | [github.com/commonworld-one/commonworld-explorer](https://github.com/commonworld-one/commonworld-explorer) | Commonworld-maintained source fork of the Besu Blockchain Explorer. |
+| Commonworld Besu source | [github.com/commonworld-one/besu](https://github.com/commonworld-one/besu) | Commonworld's public Besu source fork. |
+| Commonworld Testnet source | [github.com/commonworld-one/commonworld-testnet](https://github.com/commonworld-one/commonworld-testnet) | This repository: public network information, experiments and evidence. |
 
 ## Relationship to the testnet
 

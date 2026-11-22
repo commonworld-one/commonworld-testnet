@@ -121,7 +121,17 @@ A saved server configuration showed an internal Besu WebSocket listener, but the
 
 ## Explorer and indexing
 
-The Explorer provides public pages for blocks, nodes and transactions. Historical checks showed that HTTP 200 for the page itself did not guarantee that the block-list API succeeded; transient 500/502 responses and RPC path failures were observed. Treat the Explorer as a useful testnet interface, not a complete indexed analytics service. No verified network-wide totals for all transactions, addresses and contracts are published here. Operator records dated 19 November 2026 report the Explorer image digest `sha256:d41e02648ec9e346e2128672ae78b6e893f4cec98a60df38a9ce72a8f7a06a34`; it was not independently verified against the running deployment.
+The Explorer provides public pages for blocks, nodes, transactions, validators, wallets and Playground, plus direct object pages such as `/tx/<hash>`. It reads the Besu node through server-side RPC and does not maintain a full network-wide index. No verified totals for every transaction, address or contract are published here.
+
+### Dated deployment and checks
+
+At the 2026-11-22 19:52 UTC deployment snapshot, OCI1 reported the Explorer image descriptor `sha256:e41005c288a303b05eb202d7ff3f8edbb510ea40eaaf80a9309b98e3633330df` (`linux/amd64`) with revision label `bf1e7c15ec45797c3a123e97786efb8db5efe243`. The transfer archive SHA-256, `77e1178d1b332c78717632a8dd38ec2de0963190b23ef10849e8cdf82ddfb600`, matched on both hosts, and exported image configuration plus all nine layer digests matched. This is artifact-transfer evidence, not a signed CI provenance attestation. The matching application patch was merged into the [Commonworld Explorer `main` branch](https://github.com/commonworld-one/commonworld-explorer/commit/abef66ad6a16fe7bf91378d1c69048e3fe391e88). That public commit mirrors the application changes but is not the source revision recorded inside the deployed image.
+
+The post-deployment smoke recorded HTTP 200 for `/nodes`, `/blocks`, `/validators`, `/transactions`, `/wallets`, `/playground` and `/tx/<hash>`. The Blocks API returned ten real blocks; Nodes showed four peers and Validators showed four active QBFT validators in read-only mode. Both validator vote endpoints returned HTTP 403. These checks confirm the named routes and controls at that time, not a long soak or unrestricted capacity.
+
+A separate 2026-11-22 browser smoke ran `/blocks` for 61 seconds with one tab and then 61 seconds with two tabs. Both showed ten real blocks and advancing height with no browser errors. Service-wide OCI1 logs had 22 and 35 successful `blocksGetRecent` responses in those windows, and OVH gateway logs for the two-tab interval showed no 429/502, rate-limit, concurrency-limit or queue-rejection events. The service-wide counts cannot be attributed to those tabs individually; this was a short functional check, not a capacity test.
+
+Earlier records contain three `blocksGetRecent` HTTP 502 responses that coincided with reported private-RPC connectivity problems. The available evidence does not prove which component returned those errors. A 19 November record listed image digest `sha256:d41e02648ec9e346e2128672ae78b6e893f4cec98a60df38a9ce72a8f7a06a34`; treat it as a historical image snapshot, superseded by the later dated deployment record above, not as the current image.
 
 ## Recovery evidence
 
