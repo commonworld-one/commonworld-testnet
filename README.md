@@ -79,7 +79,7 @@ Community posts and comments remain the work of their authors. This repository l
 
 ## Commonworld source repositories
 
-- [Commonworld Explorer](https://github.com/commonworld-one/commonworld-explorer) — public source fork of the Besu Blockchain Explorer. The 22 November deployment changes are in a review branch and have not been merged into `main`.
+- [Commonworld Explorer](https://github.com/commonworld-one/commonworld-explorer) — public source fork of the Besu Blockchain Explorer. The application changes matching the 22 November deployment snapshot are recorded in [Explorer `main` at commit `abef66a`](https://github.com/commonworld-one/commonworld-explorer/commit/abef66ad6a16fe7bf91378d1c69048e3fe391e88). This public source commit mirrors the application patch; it is not the source revision recorded inside the deployed image.
 - [Commonworld Besu](https://github.com/commonworld-one/besu) — Commonworld's public Besu source fork.
 - [Commonworld Testnet](https://github.com/commonworld-one/commonworld-testnet) — this repository, containing the public network passport and experiment records.
 
