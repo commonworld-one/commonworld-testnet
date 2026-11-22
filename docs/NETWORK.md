@@ -9,7 +9,7 @@
 | Chain name | Commonworld Testnet |
 | Chain ID | `11111327` / `0xa98b9f` |
 | Genesis file | [`docs/genesis.json`](genesis.json), SHA-256 `5101f10df6cff30ec56a2e297a22c5cb8e9f4eabbaa9357bb440e496011bd636` (1,015 bytes) |
-| Client / consensus | Hyperledger Besu `v26.11.0` / QBFT |
+| Client / consensus | Hyperledger Besu `v26.11.0` / QBFT ([Commonworld source fork](https://github.com/commonworld-one/besu)) |
 | Native currency | tCWN, 18 decimals |
 | Gas price | Zero in the recorded testnet configuration |
 | Public JSON-RPC | [https://rpc-testnet.commonworld.one](https://rpc-testnet.commonworld.one) |
@@ -66,6 +66,7 @@ The validator list is decoded from genesis `extraData`; live blocks show rotatin
 | Parameter | Value |
 |---|---|
 | Client version | Hyperledger Besu `v26.11.0` ([release notes](https://github.com/besu-eth/besu/releases/tag/26.11.0), 2 November 2026) |
+| Source commit | Upstream tag `26.11.0`, commit `0e595f9eaf4b760ee7069fcdf8d901685f1641eb` ([Commonworld fork source](https://github.com/commonworld-one/besu/commit/0e595f9eaf4b760ee7069fcdf8d901685f1641eb)) |
 | Deployed image | `hyperledger/besu@sha256:3d6ac0368d449c13c4ba075acac90d6b96afa5b3113295385d88c4d5122c8808` (pinned, `linux/amd64`; the digest matches the upstream `hyperledger/besu:26.11.0` manifest on Docker Hub, verified 21 November 2026) |
 | Runtime | OpenJDK 25, Linux x86-64 (from `web3_clientVersion`) |
 | State storage | Bonsai (operator-reported `--data-storage-format=BONSAI`) |

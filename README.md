@@ -25,7 +25,8 @@ Public network information, connection details, reproducible experiments, and ag
 
 The network and Explorer are built around these upstream projects:
 
-- [Hyperledger Besu](https://github.com/hyperledger/besu) — the EVM execution client.
+- [Hyperledger Besu](https://github.com/besu-eth/besu) — the upstream EVM execution client.
+- [Commonworld Besu source fork](https://github.com/commonworld-one/besu) — the source baseline recorded for the Besu client used by this network.
 - [Besu Blockchain Explorer](https://github.com/Consensys-Incorporated/besu-blockchain-explorer) — the lightweight Explorer project.
 - [Besu documentation: Blockchain Explorer](https://docs.besu-eth.org/private-networks/how-to/monitor/besu-blockchain-explorer) — upstream usage and configuration guide.
 
